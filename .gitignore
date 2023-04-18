@@ -17,8 +17,8 @@
 *.out
 
 *config.yml
+config-int.yml
 *conf.yml
-config*
 *cli.json
 *.spdx.json
 .vscode
