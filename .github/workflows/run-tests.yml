@@ -17,8 +17,6 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.event.inputs.environment || 'int' }}
     env:
       CONFIG: ${{ secrets.CONFIG}}
       SBOM: ${{ secrets.SBOM}}
