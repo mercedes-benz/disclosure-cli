@@ -1,0 +1,17 @@
+// SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+//
+// SPDX-License-Identifier: MIT
+
+@BASE_URL = 
+@PROJECT_UUID = 
+@TOKEN = 
+
+### Get basic project information
+GET {{BASE_URL}}/projects/{{PROJECT_UUID}} HTTP/1.1
+Content-Type: application/json
+Authorization: DISCO {{TOKEN}}
+
+### Get notice file for sbom - use latest or specific version
+GET {{BASE_URL}}/projects/{{PROJECT_UUID}}/versions/0.1/sbom/latest/notice/json
+Content-Type: application/json
+Authorization: DISCO {{TOKEN}}

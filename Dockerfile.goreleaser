@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+FROM gcr.io/distroless/static-debian11
+COPY disclosure-cli /usr/bin/disclosure-cli
+ENTRYPOINT ["/usr/bin/disclosure-cli"]

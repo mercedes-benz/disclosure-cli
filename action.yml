@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+name: "disclosure-cli"
+description: "An action to send a sbom to the mercedes-benz foss disclosure portal"
+author: "fabian.faulhaber@mercedes-benz.com on behalf of MBTI GmbH"
+
+inputs:
+  host:
+    description: "Url of the hosted Disclosure Portal instance"
+    required: true
+  token:
+    description: "Api key / token for a specific project in the Disclosure Portal."
+    required: true
+  project_uuid:
+    description: "UUID of a specific project in the Disclosure Portal."
+    required: true
+  project_version:
+    description: "Version of a specific project in the Disclosure Portal."
+    required: true
+  command_type:
+    description: "Type of command e.g. project or version"
+    required: true
+  command:
+    description: "Command to the command_type e.g. sbomUpload. All available commands are available with the flag --help."
+    required: true
+  argument_1:
+    description: "Argument to the command e.g. version number for create or the path to ressource to upload a sbom."
+    required: false
+  argument_2:
+    description: "Argument to the command e.g. version number for create or the path to ressource to upload a sbom."
+    required: false
+  
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+  - ${{ inputs.command_type }}
+  - ${{ inputs.command }}
+  - ${{ inputs.argument_1 }}
+  - ${{ inputs.argument_2 }}
