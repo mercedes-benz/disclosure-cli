@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+name: Upload SBOM
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+      
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged
+    name: SBOM upload
+    runs-on: ubuntu-latest
+    env:
+      DISCO_API_TOKEN: ${{ secrets.DISCO_TOKEN }}
+      DISCO_HOST: ${{ secrets.DISCO_HOST }}
+      DISCO_PROJECT_UUID: ${{ secrets.DISCO_PROJECT_UUID }}
+      DISCO_PROJECT_VERSION:  ${{ secrets.DISCO_PROJECT_VERSION }}
+      BD_URL: ${{ secrets.BD_URL}}
+      BD_API_TOKEN: ${{ secrets.BD_API_TOKEN }}
+      BD_PROJECT_NAME: ${{ secrets.BD_PROJECT_NAME }}
+      BD_PROJECT_VERSION: ${{ secrets.BD_PROJECT_VERSION }}
+      CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
+      SBOM: "sbom.json"
+    steps:
+      - name: Export spdx SBOM from Black Duck
+        run: |
+          docker run --rm \
+          -v $(pwd):/workdir \
+          -e huburl="$BD_URL" \
+          -e projectname="$BD_PROJECT_NAME" \
+          -e projectversion="$BD_PROJECT_VERSION"   \
+          -e hubtoken="$BD_API_TOKEN" \
+          -e output="$SBOM" \
+          -e NO_PROXY="$NO_PROXY" \
+          -e HTTP_PROXY="$HTTP_PROXY" \
+          -e HTTPS_PROXY="$HTTPS_PROXY" \
+          $CONTAINER_REGISTRY    
+      - name: Disco action - upload sbom
+        id: disco
+        uses: ./
+        with:
+          host: ${{env.DISCO_HOST}}
+          token: ${{env.DISCO_API_TOKEN}}
+          project_uuid: ${{env.DISCO_PROJECT_UUID}}
+          project_version: ${{env.DISCO_PROJECT_VERSION}}
+          command_type: 'version'
+          command: 'sbomUpload'
+          argument_1: ${{env.SBOM}}

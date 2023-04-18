@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+name: Run tests
+on:
+  push:
+    branches:
+      - main
+      - action_test
+
+defaults:
+  run:
+    working-directory: ./cmd
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event.inputs.environment || 'int' }}
+    env:
+      CONFIG: ${{ secrets.CONFIG}}
+      SBOM: ${{ secrets.SBOM}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '^1.20.1'
+      - name: Create config and sbom file
+        run: |
+          cd ..
+          echo $CONFIG | base64 -d > conf.yml
+          echo $SBOM | base64 -d > sbom.json
+      - name: Run tests
+        run: |
+          go test -v 

@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+name: Foss scan
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+      
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged
+    env:
+      SCAN_SOURCE_PATH: './'
+    name: CLI foss scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-go@v3
+      continue-on-error: true
+      with:
+        go-version: '^1.20'
+    - name: build binary
+      run: |
+        go build -v
+    - name: Synopsys Detect
+      uses: synopsys-sig/detect-action@v0.3.0
+      env:
+        SYNOPSYS_SKIP_PHONE_HOME: true
+        DETECT_TOOLS: DETECTOR,SIGNATURE_SCAN,BINARY_SCAN,IMPACT_ANALYSIS,POLARIS,DOCKER,BAZEL
+        DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: ALL
+        DETECT_CLEANUP: false
+        DETECT_PROJECT_NAME: ${{ secrets.BD_PROJECT_NAME }}
+        DETECT_SOURCE_PATH: ${{ env.SCAN_SOURCE_PATH }}
+        DETECT_EXCLUDED_DETECTOR_TYPES: GIT
+        DETECT_PROJECT_VERSION_NAME: ${{ secrets.BD_PROJECT_VERSION }}
+        DETECT_BLACKDUCK_SIGNATURE_SCANNER_EXCLUSION_NAME_PATTERN: .git
+      with:
+        scan-mode: 'INTELLIGENT'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        detect-version: 7.9.0
+        blackduck-url: ${{ secrets.BD_URL}}
+        blackduck-api-token: ${{ secrets.BD_API_TOKEN }}

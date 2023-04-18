@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+#
+# SPDX-License-Identifier: MIT
+
+name: disclosure-cli example
+on: 
+  workflow_dispatch:
+      
+jobs:
+  Disclosure_Portal_Operations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Project details
+        id: project-details
+        uses: ./
+        with:
+          host: ${{ secrets.DISCO_HOST }}
+          token: ${{ secrets.DISCO_TOKEN }}
+          project_uuid: ${{ secrets.DISCO_PROJECT_UUID }}
+          project_version: ${{ secrets.DISCO_PROJECT_VERSION }}
+          command_type: 'project'
+          command: 'details'
+      - name: Sbom notice
+        id: sbom-notice
+        uses: ./
+        with:
+          host: ${{ secrets.DISCO_HOST }}
+          token: ${{ secrets.DISCO_TOKEN }}
+          project_uuid: ${{ secrets.DISCO_PROJECT_UUID }}
+          project_version: ${{ secrets.DISCO_PROJECT_VERSION }}
+          command_type: 'version'
+          command: 'sbomNotice'
+          argument_1: 'latest'
+          argument_2: 'text'
