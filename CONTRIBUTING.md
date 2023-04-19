@@ -32,8 +32,8 @@ If you are new to contributing in Github, [First Contributions](https://github.c
 
 ### Developer Certificate of Origin
 
-Contributors must agree to the "Developer Certificate of Origin Version 1.1" (DCO) and comply with the sign-off procedure for contributing to `disco-cli`.
-All contributions submitted to the `disco-cli` repository have to carry a signed-off-by statement in the commit message using the following format:
+Contributors must agree to the "Developer Certificate of Origin Version 1.1" (DCO) and comply with the sign-off procedure for contributing to `disclosure-cli`.
+All contributions submitted to the `disclosure-cli` repository have to carry a signed-off-by statement in the commit message using the following format:
 
     Signed-off-by: Firstname Lastname <email.address>
 
@@ -43,12 +43,6 @@ in the commit message, you convey your acceptance to the below DCO.
 
 ### Developer Certificate of Origin (Text)
 ```text
-Developer Certificate of Origin Version 1.1
-
-Copyright (C) 2004, 2006 The Linux Foundation and its contributors. 1 Letterman Drive Suite D4700 San Francisco, CA, 94129
-
-Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
-
 Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
