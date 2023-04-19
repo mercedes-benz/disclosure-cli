@@ -18,7 +18,7 @@ var (
 	configPath       = "./../conf.yml"
 	spdxFile         = "./../sbom.json"
 	ccsReferenceLink = "https://github.com/mercedes-benz"
-	sbomId           = "b9b27cf0-695b-4533-8947-4c64d9835904"
+	sbomId           = "9de2a2a5-637d-44cd-a2ef-e4618bdabd13"
 )
 
 func init() {
