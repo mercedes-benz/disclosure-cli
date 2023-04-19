@@ -27,6 +27,7 @@ jobs:
       CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
       SBOM: "sbom.json"
     steps:
+      - uses: actions/checkout@master
       - name: Export spdx SBOM from Black Duck
         run: |
           docker run --rm \
