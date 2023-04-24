@@ -58,20 +58,22 @@ func DiscoApiMultipartPost(url string, completeFilename string) string {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
-	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
-	if !statusOK {
-    	fmt.Println("Operation failed with status", resp.Status)
-		os.Exit(1)
-	}
+	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println("Error on read response of url " + url)
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	fmt.Println("Response from Host " + url)
+
+	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !statusOK {
+    	fmt.Println("Operation failed with status:", resp.Status)
+		fmt.Println(string(body))
+		os.Exit(1)
+	}
+
 	return string(body)
 }
 
@@ -95,20 +97,21 @@ func DiscoApiPost(url string, v interface{}) string {
 		fmt.Println("Error on requesting url " + url)
 		os.Exit(1)
 	}
-
-	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
-	if !statusOK {
-    	fmt.Println("Operation failed with status", resp.Status)
-		os.Exit(1)
-	}
+	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
 	fmt.Println("Response from Host " + url)
+
+	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !statusOK {
+    	fmt.Println("Operation failed with status:", resp.Status)
+		fmt.Println(string(body))
+		os.Exit(1)
+	}
 
 	return string(body)
 }
@@ -129,20 +132,21 @@ func DiscoApiGet(url string) string {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
-	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
-	if !statusOK {
-    	fmt.Println("Operation failed with status", resp.Status)
-		os.Exit(1)
-	}
+	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
 	fmt.Println("Response from Host " + url)
+
+	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !statusOK {
+    	fmt.Println("Operation failed with status:", resp.Status)
+		fmt.Println(string(body))
+		os.Exit(1)
+	}
 
 	return string(body)
 }
