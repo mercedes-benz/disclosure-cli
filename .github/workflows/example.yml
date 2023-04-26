@@ -21,15 +21,15 @@ jobs:
           project_version: ${{ secrets.DISCO_PROJECT_VERSION }}
           command_type: 'project'
           command: 'details'
-      - name: Sbom notice
-        id: sbom-notice
-        uses: ./
-        with:
-          host: ${{ secrets.DISCO_HOST }}
-          token: ${{ secrets.DISCO_TOKEN }}
-          project_uuid: ${{ secrets.DISCO_PROJECT_UUID }}
-          project_version: ${{ secrets.DISCO_PROJECT_VERSION }}
-          command_type: 'version'
-          command: 'sbomNotice'
-          argument_1: 'latest'
-          argument_2: 'text'
+#      - name: Sbom notice
+#        id: sbom-notice
+#        uses: ./
+#        with:
+#          host: ${{ secrets.DISCO_HOST }}
+#          token: ${{ secrets.DISCO_TOKEN }}
+#          project_uuid: ${{ secrets.DISCO_PROJECT_UUID }}
+#          project_version: ${{ secrets.DISCO_PROJECT_VERSION }}
+#          command_type: 'version'
+#          command: 'sbomNotice'
+#          argument_1: 'latest'
+#          argument_2: 'text'
