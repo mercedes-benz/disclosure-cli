@@ -19,6 +19,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `Thank your for your contribution! Please make sure to agree to our DCO by including a  \
-              a Signed-off-by message in your commits. You can find the DCO as in our [contributing guide](https://github.com/mercedes-benz/disclosure-cli/blob/main/CONTRIBUTING.md). \
+              a Signed-off-by message in your commits. You can find the DCO in our [contributing guide](https://github.com/mercedes-benz/disclosure-cli/blob/main/CONTRIBUTING.md). \
               One or more of your commits is missing this message.`
             })
