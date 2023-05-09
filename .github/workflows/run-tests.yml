@@ -20,6 +20,7 @@ jobs:
     env:
       CONFIG: ${{ secrets.CONFIG}}
       SBOM: ${{ secrets.SBOM}}
+      HOST: ${{ secrets.DISCO_HOST}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
