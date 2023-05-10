@@ -183,7 +183,7 @@ We will create a version `1.0` in the following steps.
 ```
 ```
 {
-    "name": "disclosure-cli-cli-example",
+    "name": "disclosure-cli-example",
     "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeee",
     "created": "2022-03-16T14:54:13.306719888Z",
     "updated": "2022-03-16T15:13:45.461701011Z",
@@ -200,7 +200,8 @@ Our project still does not have a project version. Let's create one.
 ```
 {
     "success": true,
-    "message": "version created"
+    "message": "version created",
+    "key": "ab02a5b5-8923-41pb-9a9b-cd5836d66dbe"
 }
 ```
 Let's have a look at the project versions of our project. There should only be one ;)
@@ -223,7 +224,10 @@ The SBOM is always related to a specific project version. In our case it is `1.0
 ```
 {
     "docIsValid": true,
-    "validationMessage": ""
+    "validationFailedMessage": "",
+    "hash": "77a50e85477db7580d3052403a8d1ebe4ad9a3b912ad18e3a3b4f0ccecf36c65",
+    "fileUploaded": true,
+    "id": "SPDXRef-DOCUMENT"
 }
 ```
 ```
@@ -231,12 +235,12 @@ The SBOM is always related to a specific project version. In our case it is `1.0
 ```
 ```
 {
-    "name": "Disclosure Portal Backend/1.0",
+    "name": "Disclosure-CLI,
     "id": "SPDXRef-DOCUMENT",
     "version": "SPDX-2.2",
     "creators": "Tool: xxx",
-    "created": "2022-03-17T14:40:11.660329585Z",
-    "uploaded": "2022-03-17T14:40:11.660329585Z",
+    "created": "2022-03-16T14:54:13.306719888Z",
+    "updated": "2022-03-16T15:13:45.461701011Z",
     "status": true
 }
 ```
