@@ -128,7 +128,7 @@ project schema        Returning the project schema
 project status        Returning the project status
 
 version ccs           CCS status
-version ccsAdd        Add reference (url) to complete coresponding source code
+version ccsAdd        Add reference (url) to complete corresponding source code
 version create        Create version
 version details       Returning the project version details
 version list          Returning the project version list
