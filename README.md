@@ -43,7 +43,7 @@ go build -o disclosure-cli
 You can pull a Disclosure-CLI image from https://github.com/orgs/mercedes-benz/packages or build it yourself with the Dockerfile provided in the repository. 
 
 ```
-docker pull ghcr.io/mercedes-benz/disclosure-cli
+docker pull ghcr.io/mercedes-benz/disclosure-cli:0.96.4-amd64
 ```
 or
 ```
@@ -52,9 +52,14 @@ cd disclosure-cli
 docker build . -t disclosure-cli
 ```
 
-Run the image
+Run the image to get project information
 ```
 docker run disclosure-cli project details -H HOST -u PROJECT_UUID -t TOKEN
+```
+
+Run the image to upload a sbom file to a project version
+```
+docker run -v $(pwd)/sbom.spdx.json:/sbom.spdx.json disclosure-cli version sbomUpload sbom.spdx.json -H HOST -u PROJECT_UUID  -t TOKEN -v VERSION
 ```
 
 ### Disclosure-CLI as GitHub Action
