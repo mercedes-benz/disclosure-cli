@@ -13,3 +13,7 @@ type RequestCssAdd struct {
 	URL     string `json:"url"`
 	Comment string `json:"comment"`
 }
+
+type RequestCreateTag struct {
+	Tag string `json:"tag"`
+}
