@@ -388,3 +388,26 @@ func TestVersionSbomStatusCmd(t *testing.T) {
 		}
 	}
 }
+
+func TestSbomTagCmd(t *testing.T) {
+	tests := []struct {
+		name string
+		cmd  []string
+		want []string
+	}{
+		{
+			name: "Sbom: Add Tag to sbom",
+			cmd:  []string{"sbom", "tag", sbomId,"2.2","-c", configPath},
+			want: []string{"success", "true", "message", "Spdx tag updated"},
+		},
+	}
+
+	for _, tt := range tests {
+		msg, err := ExecuteCommandC(rootCmd, tt.cmd...)
+		assert.NoError(t, err)
+
+		for _, want := range tt.want {
+			assert.Contains(t, msg, want, fmt.Sprintf("got: %s; want: %s ", msg, want))
+		}
+	}
+}

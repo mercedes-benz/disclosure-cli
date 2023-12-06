@@ -54,24 +54,21 @@ func DiscoApiMultipartPost(url string, completeFilename string) string {
 
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Error on requesting url " + url)
-		fmt.Println(err)
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
 		os.Exit(1)
 	}
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
 		os.Exit(1)
 	}
 	fmt.Println("Response from Host " + url)
 
 	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
 	if !statusOK {
-    	fmt.Println("Operation failed with status:", resp.Status)
-		fmt.Println(string(body))
-		os.Exit(1)
+		fmt.Println("Operation failed with status:", resp.Status)
 	}
 
 	return string(body)
@@ -84,7 +81,7 @@ func DiscoApiPost(url string, v interface{}) string {
 		os.Exit(1)
 	}
 	client := &http.Client{}
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(data))
+	req, err := http.NewRequest(http.MethodPost, url, bytes.NewBuffer(data))
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -108,7 +105,7 @@ func DiscoApiPost(url string, v interface{}) string {
 
 	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
 	if !statusOK {
-    	fmt.Println("Operation failed with status:", resp.Status)
+		fmt.Println("Operation failed with status:", resp.Status)
 		fmt.Println(string(body))
 		os.Exit(1)
 	}
@@ -116,9 +113,46 @@ func DiscoApiPost(url string, v interface{}) string {
 	return string(body)
 }
 
+func DiscoApiPut(url string, v interface{}) string {
+	data, err := json.Marshal(v)
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+	client := &http.Client{}
+	req, err := http.NewRequest(http.MethodPut, url, bytes.NewBuffer(data))
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
+	req.Header.Set("accept", "application/json")
+	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Printf("\n Error on requesting url %s \n Error: %s", url, err.Error())
+		os.Exit(1)
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
+		os.Exit(1)
+	}
+	fmt.Println("Response from Host " + url)
+
+	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !statusOK {
+		fmt.Println("Operation failed with status:", resp.Status)
+	}
+
+	return string(body)
+}
+
 func DiscoApiGet(url string) string {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
+	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -128,24 +162,21 @@ func DiscoApiGet(url string) string {
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println("Error on requesting url " + url)
-		fmt.Println(err)
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
 		os.Exit(1)
 	}
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
 		os.Exit(1)
 	}
 	fmt.Println("Response from Host " + url)
 
 	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
 	if !statusOK {
-    	fmt.Println("Operation failed with status:", resp.Status)
-		fmt.Println(string(body))
-		os.Exit(1)
+		fmt.Println("Operation failed with status:", resp.Status)
 	}
 
 	return string(body)

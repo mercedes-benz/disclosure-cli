@@ -1,6 +1,6 @@
 swagger: "2.0"
-host: 
-basePath:
+host: URL
+basePath: /disco/v1
 info:
   contact: {}
   description: |-
@@ -8,9 +8,9 @@ info:
 
     SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
     SPDX-License-Identifier: MIT
-  termsOfService: https://mb4.me/FOSS_Disclosure_Portal_ToU
+  termsOfService: URL
   title: FOSS Disclosure Portal
-  version: 1.0.0
+  version: 1.0.1
 schemes:
   - https
 securityDefinitions:
@@ -24,7 +24,7 @@ paths:
     get:
       operationId: getProjectDetails
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -51,7 +51,7 @@ paths:
     get:
       operationId: getProjectPolicyRules
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -82,7 +82,7 @@ paths:
       - multipart/form-data
       operationId: getSBOMStatusInformation
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -115,7 +115,7 @@ paths:
       description: some description
       operationId: getProjectSchema
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -142,7 +142,7 @@ paths:
     get:
       operationId: getProjectStatus
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -169,7 +169,7 @@ paths:
     get:
       operationId: getProjectVersions
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -199,7 +199,7 @@ paths:
       - application/json
       operationId: createProjectVersion
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -228,7 +228,7 @@ paths:
     get:
       operationId: getProjectVersionDetails
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -260,7 +260,7 @@ paths:
     get:
       operationId: getProjectVersionExternalSourceCodeReferences
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -293,7 +293,7 @@ paths:
     post:
       operationId: createProjectVersionExternalSourceCodeReferences
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -327,7 +327,7 @@ paths:
     get:
       operationId: getProjectVersionSPDXList
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -362,7 +362,7 @@ paths:
       - multipart/form-data
       operationId: uploadSBOMAsSPDX
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -399,7 +399,7 @@ paths:
     get:
       operationId: getSBOMMetaForDelivery
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -410,7 +410,7 @@ paths:
         required: true
         type: string
       - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
-          delivery e.g.: dummy-sbom-id---xxx-4413-yyy'
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
         in: path
         name: sbomUuid
         required: true
@@ -437,7 +437,7 @@ paths:
     get:
       operationId: getProjectVersionSBOMStatus
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -448,7 +448,7 @@ paths:
         required: true
         type: string
       - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
-          delivery e.g.: dummy-sbom-id---xxx-4413-yyy'
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
         in: path
         name: sbomUuid
         required: true
@@ -475,7 +475,7 @@ paths:
     get:
       operationId: getSBOMNoticeFileHTML
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -486,7 +486,7 @@ paths:
         required: true
         type: string
       - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
-          delivery e.g.: dummy-sbom-id---xxx-4413-yyy'
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
         in: path
         name: sbomUuid
         required: true
@@ -513,7 +513,7 @@ paths:
     get:
       operationId: getSBOMNoticeFileJSON
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -524,7 +524,7 @@ paths:
         required: true
         type: string
       - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
-          delivery e.g.: dummy-sbom-id---xxx-4413-yyy'
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
         in: path
         name: sbomUuid
         required: true
@@ -551,7 +551,7 @@ paths:
     get:
       operationId: getSBOMNoticeFileText
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy'
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
         in: path
         name: uuid
         required: true
@@ -562,7 +562,7 @@ paths:
         required: true
         type: string
       - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
-          delivery e.g.: dummy-sbom-id---xxx-4413-yyy'
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
         in: path
         name: sbomUuid
         required: true
@@ -585,6 +585,56 @@ paths:
       security:
       - Bearer: []
       summary: Get notice file for specified SBOM formatted as text
+  /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/tag:
+    put:
+      consumes:
+      - application/json
+      operationId: updateSpdxTag
+      parameters:
+      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+        in: path
+        name: uuid
+        required: true
+        type: string
+      - description: 'Project Version e.g.: 1.0'
+        in: path
+        name: version
+        required: true
+        type: string
+      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+          delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
+        in: path
+        name: sbomUuid
+        required: true
+        type: string
+      - description: Tag
+        in: body
+        name: tag
+        required: true
+        schema:
+          $ref: '#/definitions/project.SPDXSetTagRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success Response
+          schema:
+            $ref: '#/definitions/SuccessResponse'
+        "401":
+          description: Unauthorized Error
+          schema:
+            $ref: '#/definitions/HttpError'
+        "417":
+          description: Validation Error
+          schema:
+            $ref: '#/definitions/HttpError'
+        "500":
+          description: SPDX not found in history
+          schema:
+            $ref: '#/definitions/HttpError'
+      security:
+      - Bearer: []
+      summary: Update SPDX Tag
 definitions:
   ExternalSource:
     properties:
@@ -713,7 +763,7 @@ definitions:
         example: Example description
         type: string
       key:
-        example: dummy-key-----4e42-a64a
+        example: dummy-key-----4e42-a64a-c0b362976f9c
         type: string
       licenses:
         items:
@@ -736,7 +786,7 @@ definitions:
         example: AGPL-3.0-or-later
         type: string
       key:
-        example: dummy-key
+        example: dummy-key-----cf422e8a94-03b3-4c6c-9954-8c183d7177cf
         type: string
       name:
         example: Name of license
@@ -760,7 +810,7 @@ definitions:
         example: "2023-04-14T09:41:28.077559111Z"
         type: string
       uuid:
-        example: dummy-id-----6b9c
+        example: dummy-id-----6b9c-44a7-8e01-14e67ef4404a
         type: string
     type: object
   ProjectStatus:
@@ -962,7 +1012,7 @@ definitions:
   VersionHistory:
     properties:
       id:
-        example: dummy-id----4672
+        example: dummy-id----4672-ad7b-757530f2580b
         type: string
       name:
         example: SBOM Demonstration/v1
@@ -987,6 +1037,16 @@ definitions:
         type: string
     required:
       - name
+    type: object
+  project.SPDXSetTagRequestDto:
+    properties:
+      tag:
+        example: "1.0"
+        maxLength: 80
+        minLength: 3
+        type: string
+    required:
+      - tag
     type: object
 externalDocs:
   description: OpenAPI
