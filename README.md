@@ -101,6 +101,7 @@ Available Commands:
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
   project     Execute a project command
+  sbom        Execute a project version sbom command
   sha256      Generates a sha256 hash
   version     Execute a project version command
 
@@ -143,7 +144,15 @@ version sbomStatus    Status information of SBOM
 version sbomUpload    Uploads SBOM file to a project version
 version sboms         List of all uploaded SBOMS
 
+sbom tag              Add tag to a sbom
+
 ```
+
+Note 12-06-2023: 
+2024 we will review the disclosure-cli to restructure the command structure and add new features. 
+With the current release we establish a new "sbom" command with a new sub command to add tags to a sbom.
+Existing sbom commands (sbomDetails, sbomNotice, sbomStatus, sbomUpload, sboms) will move to the new "sbom" command in 2024.  
+
 
 ### Help on commands
 ```
