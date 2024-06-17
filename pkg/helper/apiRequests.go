@@ -25,14 +25,11 @@ func SbomUploadFormData(url string, completeFilename string, tag string) string 
 		defer w.Close()
 		defer m.Close()
 		if len(tag) > 0 {
-			fmt.Println("writing field")
 			err := m.WriteField("tag", tag)
-			fmt.Println("zesss")
 			if err != nil {
 				fmt.Println("Error adding tag field " + err.Error())
 				os.Exit(1)
 			}
-			fmt.Println("wrote field")
 		}
 		_, fileName := path.Split(completeFilename)
 		part, err := m.CreateFormFile("file", fileName)
