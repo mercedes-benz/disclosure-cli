@@ -25,7 +25,7 @@ func SbomUploadFormData(url string, completeFilename string, tag string) string 
 		defer w.Close()
 		defer m.Close()
 		if len(tag) > 0 {
-			err := m.WriteField("tag", tag)
+			err := m.WriteField("sbomTag", tag)
 			if err != nil {
 				fmt.Println("Error adding tag field " + err.Error())
 				os.Exit(1)
