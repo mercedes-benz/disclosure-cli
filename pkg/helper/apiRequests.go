@@ -17,14 +17,20 @@ import (
 	"github.com/mercedes-benz/disclosure-cli/conf"
 )
 
-func DiscoApiMultipartPost(url string, completeFilename string) string {
+func SbomUploadFormData(url string, completeFilename string, tag string) string {
 	client := &http.Client{}
 	r, w := io.Pipe()
 	m := multipart.NewWriter(w)
 	go func() {
 		defer w.Close()
 		defer m.Close()
-
+		if len(tag) > 0 {
+			err := m.WriteField("sbomTag", tag)
+			if err != nil {
+				fmt.Println("Error adding tag field " + err.Error())
+				os.Exit(1)
+			}
+		}
 		_, fileName := path.Split(completeFilename)
 		part, err := m.CreateFormFile("file", fileName)
 		if err != nil {
