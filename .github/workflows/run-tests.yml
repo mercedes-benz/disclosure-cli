@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - action_test
+  workflow_dispatch:
 
 defaults:
   run:
