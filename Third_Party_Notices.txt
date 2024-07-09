@@ -1,53 +1,50 @@
-SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
-
-SPDX-License-Identifier: MIT
-
 Copyright notices and license information
 
 Parts of this product/service may contain the following Free and Open Source Software (FOSS) components, which are subject to separate FOSS license terms. Where such FOSS licenses convey the right to request the source code of, or other information about incorporated FOSS components, we will supply such source code on a data medium in accordance with the applicable license terms upon request (written offer). Please direct your request to the following address within three years after delivering the product/service:
 
-Mercedes-Benz AG, HPC: CAC,
-Customer Service,
-70546 Stuttgart, Germany
+disclosure-portal@mercedes-benz.com
 
-
-The copyright holders of such FOSS usually do not provide any warranty and assume no liability whatsoever for the FOSS components. Potential warranties or liability of the provider for the product/service remain unaffected. Note that any modification to the product/service of any kind can void any warranty claim.
+The copyright holders of such FOSS usually do not provide any warranty and assume no liability whatsoever for the FOSS components. Potential warranties or liability of the provider for the product/service remain unaffected. Note that any modification to the product/service of any kind can void any warranty claim. We are not responsible for the content of third-party linked websites, nor do we accept any liability whatsoever for same.
 
 
 
 - Components -
 
-go-spew/v1.1.1 : ISC License (ISC)
-golang-github-spf13-pflag-dev/v1.0.5 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
-jinzhu/configor/v1.2.1 : MIT License (MIT)
-yaml for Go/v2.4.0 : Apache License 2.0 (Apache-2.0)
-BurntSushi/toml/1.2.1 : MIT License (MIT) AND BSD 2-Clause "Simplified" License (BSD-2-Clause) AND Creative Commons Attribution 3.0 Unported (CC-BY-3.0) AND BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
+BurntSushi/toml/1.2.1 : MIT License (MIT)
+BurntSushi/toml/1.2.1 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
+BurntSushi/toml/1.2.1 : Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+BurntSushi/toml/1.2.1 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
+BurntSushi/toml/v1.4.0 : MIT License (MIT)
 Go Testify/v1.8.2 : MIT License (MIT)
 go-check-check/20171108-snapshot-20d25e28 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
+go-spew/v1.1.1 : ISC License (ISC)
+golang-github-spf13-pflag-dev/v1.0.5 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 inconshreveable/mousetrap/v1.1.0 : Apache License 2.0 (Apache-2.0)
+jinzhu/configor/v1.2.1 : MIT License (MIT)
+jinzhu/configor/v1.2.2 : MIT License (MIT)
 pmezard-go-difflib/1.0.0 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 spf13-cobra/v1.7.0 : Apache License 2.0 (Apache-2.0)
+yaml for Go/v2.4.0 : Apache License 2.0 (Apache-2.0)
+yaml for Go/v3.0.1 : MIT License (MIT)
+yaml for Go/v3.0.1 : Apache License 2.0 (Apache-2.0)
 
 - Copyright Texts -
 
-Go Testify/v1.8.2 :
-     Copyright (c) 2012-2020 Mat Ryer, Tyler Bunnell and contributors
+BurntSushi/toml/1.2.1 : 
+	Copyright 2010 The Go Authors.  All rights reserved
+	Copyright (c) 2013 TOML authors
+	Copyright (c) 2018 TOML authors
 
-BurntSushi/toml/1.2.1 :
-     Copyright (c) 2013 TOML authors
+BurntSushi/toml/v1.4.0 : 
+	Copyright (c) 2013 TOML authors
+	Copyright 2010 The Go Authors.  All rights reserved
 
-inconshreveable/mousetrap/v1.1.0 :
-     Copyright 2022 Alan Shreve (@inconshreveable)
-
-spf13-cobra/v1.7.0 :
-     For Copyright see https://github.com/spf13/cobra/blob/main/LICENSE.txt
+Go Testify/v1.8.2 : 
+	Copyright (c) 2012-2020 Mat Ryer, Tyler Bunnell and contributors.
 
 go-check-check/20171108-snapshot-20d25e28 : 
 	Copyright (c) 2010-2013 Gustavo Niemeyer &lt;gustavo@niemeyer.net&gt;
 	Copyright (c) 2012 The Go Authors. All rights reserved
-
-pmezard-go-difflib/1.0.0 : 
-	Copyright (c) 2013, Patrick Mezard
 
 go-spew/v1.1.1 : 
 	Copyright (c) 2012-2016 Dave Collins &lt;dave@davec.name&gt;
@@ -62,44 +59,34 @@ golang-github-spf13-pflag-dev/v1.0.5 :
 	Copyright (c) 2012 Alex Ogier. All rights reserved
 	Copyright (c) 2012 The Go Authors. All rights reserved
 
+inconshreveable/mousetrap/v1.1.0 : 
+	Copyright 2022 Alan Shreve (@inconshreveable)
+
 jinzhu/configor/v1.2.1 : 
 	Copyright (c) 2013-NOW  Jinzhu &lt;wosmvp@gmail.com&gt;
+
+jinzhu/configor/v1.2.2 : 
+	Copyright (c) 2013-NOW Jinzhu &lt;wosmvp@gmail.com&gt;
+
+pmezard-go-difflib/1.0.0 : 
+	Copyright (c) 2013, Patrick Mezard
+
+spf13-cobra/v1.7.0 : 
+	Copyright 2013-2023 The Cobra Authors
 
 yaml for Go/v2.4.0 : 
 	Copyright 2011-2016 Canonical Ltd
 	Copyright (c) 2006 Kirill Simonov
 
+yaml for Go/v3.0.1 : 
+	Copyright 2011-2016 Canonical Ltd.
+	Copyright (c) 2006-2010 Kirill Simonov
+	Copyright (c) 2006-2011 Kirill Simonov
+	Copyright (c) 2011-2019 Canonical Ltd
+	copyright staring in 2011 when the project was ported over:
+
 
 - Licenses -
-
-BSD-3-Clause - BSD 3-Clause "New" or "Revised" License : 
-	Copyright (c) <year> <owner>. 
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-
-
-ISC - ISC License : 
-	ISC License:
-
-Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
-Copyright (c) 1995-2003 by Internet Software Consortium
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-
-
 
 Apache-2.0 - Apache License 2.0 : 
 	Apache License
@@ -179,20 +166,6 @@ limitations under the License.
 
 
 
-MIT - MIT License : 
-	MIT License
-
-Copyright (c) <year> <copyright holders>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-
 BSD-2-Clause - BSD 2-Clause "Simplified" License : 
 	Copyright (c) <year> <owner> 
 
@@ -201,6 +174,22 @@ Redistribution and use in source and binary forms, with or without modification,
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+
+BSD-3-Clause - BSD 3-Clause "New" or "Revised" License : 
+	Copyright (c) <year> <owner>. 
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
@@ -302,6 +291,32 @@ Except for the limited purpose of indicating to the public that the Work is lice
 
 Creative Commons may be contacted at http://creativecommons.org/.
 
+
+
+
+ISC - ISC License : 
+	ISC License:
+
+Copyright (c) 2004-2010 by Internet Systems Consortium, Inc. ("ISC")
+Copyright (c) 1995-2003 by Internet Software Consortium
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL ISC BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+
+
+MIT - MIT License : 
+	MIT License
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
