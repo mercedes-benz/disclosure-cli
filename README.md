@@ -43,7 +43,7 @@ go build -o disclosure-cli
 You can pull a Disclosure-CLI image from https://github.com/orgs/mercedes-benz/packages or build it yourself with the Dockerfile provided in the repository. 
 
 ```
-docker pull ghcr.io/mercedes-benz/disclosure-cli:0.96.4-amd64
+docker pull ghcr.io/mercedes-benz/disclosure-cli:0.6.0-amd64
 ```
 or
 ```
