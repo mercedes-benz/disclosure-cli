@@ -15,6 +15,8 @@ import (
 	"github.com/jinzhu/configor"
 )
 
+const DefaultApiVersion = "v1"
+
 var Config = struct {
 	ProjectToken   string `default:""`
 	ProjectUUID    string `default:""`
@@ -50,6 +52,7 @@ func rightPad2Len(s string, padStr string, overallLen int) string {
 	var retStr = s + strings.Repeat(padStr, padCountInt)
 	return retStr[:overallLen]
 }
+
 func dumpStructToSystemOut(parentTitle string, data interface{}) interface{} {
 	if reflect.ValueOf(data).Kind() == reflect.Struct {
 		v := reflect.ValueOf(data)
@@ -92,4 +95,16 @@ func getEnvVariable(envKey string, defaultValue string) string {
 		return val
 	}
 	return defaultValue
+}
+
+func EnsureApiVerison() {
+	Config.Host = strings.TrimSuffix(Config.Host, "/")
+	if strings.HasSuffix(Config.Host, "/public") {
+		Config.Host += "/" + DefaultApiVersion
+		return
+	}
+	if !strings.HasSuffix(Config.Host, "/"+DefaultApiVersion) {
+		fmt.Println("WARNING: non-default api version set, unexpected behavior is possible")
+	}
+
 }
