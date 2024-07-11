@@ -81,4 +81,5 @@ func initConfig() {
 		rootCmd.MarkPersistentFlagRequired("token")
 		rootCmd.MarkPersistentFlagRequired("host")
 	}
+	conf.EnsureApiVerison()
 }
