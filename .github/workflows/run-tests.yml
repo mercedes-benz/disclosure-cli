@@ -12,7 +12,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./cmd
+    working-directory: ./
 
 jobs:
   test:
@@ -34,4 +34,4 @@ jobs:
           echo $SBOM | base64 -d > sbom.json
       - name: Run tests
         run: |
-          go test -v 
+          go test -v ./... 
