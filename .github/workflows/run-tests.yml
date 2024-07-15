@@ -29,7 +29,6 @@ jobs:
           go-version: '^1.20.1'
       - name: Create config and sbom file
         run: |
-          cd ..
           echo $CONFIG | base64 -d > conf.yml
           echo $SBOM | base64 -d > sbom.json
       - name: Run tests
