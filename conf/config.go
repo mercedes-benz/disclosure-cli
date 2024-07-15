@@ -99,7 +99,7 @@ func getEnvVariable(envKey string, defaultValue string) string {
 
 func EnsureApiVerison() {
 	Config.Host = strings.TrimSuffix(Config.Host, "/")
-	if strings.HasSuffix(Config.Host, "/public") {
+	if strings.HasSuffix(Config.Host, "/public") || strings.HasSuffix(Config.Host, "/disco") {
 		Config.Host += "/" + DefaultApiVersion
 		return
 	}

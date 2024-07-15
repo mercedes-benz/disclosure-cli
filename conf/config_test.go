@@ -7,16 +7,28 @@ import (
 )
 
 func TestEnsureApiVersion(t *testing.T) {
-	Config.Host = "https://disco-int.app.corpintra.net/api/public/v1/"
+	Config.Host = "https://disco.test/api/public/v1/"
 	EnsureApiVerison()
-	assert.Equal(t, "https://disco-int.app.corpintra.net/api/public/v1", Config.Host)
-	Config.Host = "https://disco-int.app.corpintra.net/api/public/v1"
+	assert.Equal(t, "https://disco.test/api/public/v1", Config.Host)
+	Config.Host = "https://disco.test/api/public/v1"
 	EnsureApiVerison()
-	assert.Equal(t, "https://disco-int.app.corpintra.net/api/public/v1", Config.Host)
-	Config.Host = "https://disco-int.app.corpintra.net/api/public/"
+	assert.Equal(t, "https://disco.test/api/public/v1", Config.Host)
+	Config.Host = "https://disco.test/api/public/"
 	EnsureApiVerison()
-	assert.Equal(t, "https://disco-int.app.corpintra.net/api/public/v1", Config.Host)
-	Config.Host = "https://disco-int.app.corpintra.net/api/public/v32"
+	assert.Equal(t, "https://disco.test/api/public/v1", Config.Host)
+	Config.Host = "https://disco.test/api/public/v32"
 	EnsureApiVerison()
-	assert.Equal(t, "https://disco-int.app.corpintra.net/api/public/v32", Config.Host)
+	assert.Equal(t, "https://disco.test/api/public/v32", Config.Host)
+	Config.Host = "https://disco.test/disco"
+	EnsureApiVerison()
+	assert.Equal(t, "https://disco.test/disco/v1", Config.Host)
+	Config.Host = "https://disco.test/disco/v1"
+	EnsureApiVerison()
+	assert.Equal(t, "https://disco.test/disco/v1", Config.Host)
+	Config.Host = "https://disco.test/disco/"
+	EnsureApiVerison()
+	assert.Equal(t, "https://disco.test/disco/v1", Config.Host)
+	Config.Host = "https://disco.test/disco/v32"
+	EnsureApiVerison()
+	assert.Equal(t, "https://disco.test/disco/v32", Config.Host)
 }
