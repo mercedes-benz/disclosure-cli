@@ -15,7 +15,10 @@ import (
 	"github.com/jinzhu/configor"
 )
 
-const DefaultApiVersion = "v1"
+const (
+	DefaultApiVersion = "v1"
+	CLIVersion        = "v0.7"
+)
 
 var Config = struct {
 	ProjectToken   string `default:""`
@@ -23,6 +26,10 @@ var Config = struct {
 	ProjectVersion string `default:""`
 	Host           string `default:""`
 }{}
+
+func UserAgent() string {
+	return "disclosure-cli / " + CLIVersion
+}
 
 func LoadConfig(configFileLocation string) {
 	if _, err := os.Stat(configFileLocation); errors.Is(err, os.ErrNotExist) {

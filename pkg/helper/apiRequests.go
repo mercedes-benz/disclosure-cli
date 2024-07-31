@@ -57,6 +57,7 @@ func SbomUploadFormData(url string, completeFilename string, tag string) string 
 	req.Header.Set("accept", "application/json")
 	req.Header.Set("Content-Type", m.FormDataContentType())
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	req.Header.Set("User-Agent", conf.UserAgent())
 
 	resp, err := client.Do(req)
 	if err != nil {
@@ -96,6 +97,7 @@ func DiscoApiPost(url string, v interface{}) string {
 	req.Header.Set("accept", "application/json")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	req.Header.Set("User-Agent", conf.UserAgent())
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println("Error on requesting url " + url)
@@ -136,6 +138,7 @@ func DiscoApiPut(url string, v interface{}) string {
 	req.Header.Set("accept", "application/json")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	req.Header.Set("User-Agent", conf.UserAgent())
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Printf("\n Error on requesting url %s \n Error: %s", url, err.Error())
@@ -168,6 +171,7 @@ func DiscoApiGet(url string) string {
 
 	req.Header.Set("accept", "application/json")
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	req.Header.Set("User-Agent", conf.UserAgent())
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
