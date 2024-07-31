@@ -55,7 +55,7 @@ func SbomUploadFormData(url string, completeFilename string, tag string) string 
 		os.Exit(1)
 	}
 	req.Header.Set("accept", "application/json")
-	req.Header.Set("content-type", m.FormDataContentType())
+	req.Header.Set("Content-Type", m.FormDataContentType())
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
 
 	resp, err := client.Do(req)
@@ -94,6 +94,7 @@ func DiscoApiPost(url string, v interface{}) string {
 	}
 
 	req.Header.Set("accept", "application/json")
+	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
 	resp, err := client.Do(req)
 	if err != nil {
@@ -133,6 +134,7 @@ func DiscoApiPut(url string, v interface{}) string {
 	}
 
 	req.Header.Set("accept", "application/json")
+	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
 	resp, err := client.Do(req)
 	if err != nil {
