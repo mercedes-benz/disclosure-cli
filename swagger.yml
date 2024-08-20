@@ -6,11 +6,11 @@ info:
   description: |-
     FOSS Disclosure Portal automates and digitizes the process for disclosure of the Free and Open Source Software components, which are included in products and applications. It aims at a more efficient, transparent and digital software supply chain, enabling software suppliers to deliver information on used open source via a technical interface in a standardized exchange format as Software Bill of Materials (SBOM).
 
-    SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
+    SPDX-FileCopyrightText: 2024 Mercedes-Benz Tech Innovation GmbH
     SPDX-License-Identifier: MIT
-  termsOfService: URL
+  termsOfService: https://mb4.me/FOSS_Disclosure_Portal_ToU
   title: FOSS Disclosure Portal
-  version: 1.0.1
+  version: 1.0.2
 schemes:
   - https
 securityDefinitions:
@@ -24,13 +24,13 @@ paths:
     get:
       operationId: getProjectDetails
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Project
@@ -45,19 +45,19 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get project details
   /projects/{uuid}/policyrules:
     get:
       operationId: getProjectPolicyRules
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Policy Rules
@@ -74,26 +74,26 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get policy rules of project
   /projects/{uuid}/sbomcheck:
     post:
       consumes:
-      - multipart/form-data
+        - multipart/form-data
       operationId: getSBOMStatusInformation
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: SBOM file
-        in: formData
-        name: file
-        required: true
-        type: file
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: SBOM file
+          in: formData
+          name: file
+          required: true
+          type: file
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: SPDX Status Information
@@ -108,20 +108,20 @@ paths:
           schema:
             $ref: '#/definitions/SpdxUploadResponse'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get status information of uploaded SBOM file
   /projects/{uuid}/schema:
     get:
       description: some description
       operationId: getProjectSchema
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Schema Details
@@ -136,19 +136,19 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get project schema
   /projects/{uuid}/status:
     get:
       operationId: getProjectStatus
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Project Status
@@ -163,19 +163,19 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get project status
   /projects/{uuid}/versions:
     get:
       operationId: getProjectVersions
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Versions
@@ -192,26 +192,26 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get project versions
     post:
       consumes:
-      - application/json
+        - application/json
       operationId: createProjectVersion
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: Version Details
-        in: body
-        name: version
-        required: true
-        schema:
-          $ref: '#/definitions/VersionRequest'
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: Version Details
+          in: body
+          name: version
+          required: true
+          schema:
+            $ref: '#/definitions/VersionRequest'
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success Response
@@ -222,24 +222,24 @@ paths:
           schema:
             $ref: '#/definitions/HttpError'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Create project version
   /projects/{uuid}/versions/{version}:
     get:
       operationId: getProjectVersionDetails
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Version Details
@@ -254,24 +254,24 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get version details of project
   /projects/{uuid}/versions/{version}/ccs:
     get:
       operationId: getProjectVersionExternalSourceCodeReferences
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: External Source
@@ -288,29 +288,29 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get external references to source code resources
     post:
       operationId: createProjectVersionExternalSourceCodeReferences
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: Source
-        in: body
-        name: source
-        required: true
-        schema:
-          $ref: '#/definitions/SourceExternal'
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: Source
+          in: body
+          name: source
+          required: true
+          schema:
+            $ref: '#/definitions/SourceExternal'
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success Response
@@ -321,24 +321,24 @@ paths:
           schema:
             $ref: '#/definitions/HttpError'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Create external reference to source code resources
   /projects/{uuid}/versions/{version}/sboms:
     get:
       operationId: getProjectVersionSPDXList
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Version History
@@ -355,30 +355,34 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get SPDX list of project version
     post:
       consumes:
-      - multipart/form-data
+        - multipart/form-data
       operationId: uploadSBOMAsSPDX
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: SPDX File
-        in: formData
-        name: file
-        required: true
-        type: file
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: SPDX File
+          in: formData
+          name: file
+          required: true
+          type: file
+        - description: SPDX Tag
+          in: formData
+          name: sbomTag
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: SPDX Upload Response
@@ -393,30 +397,30 @@ paths:
           schema:
             $ref: '#/definitions/SpdxUploadResponse'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Upload SBOM as SPDX
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}:
     get:
       operationId: getSBOMMetaForDelivery
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: SPDX Meta Data
@@ -431,30 +435,30 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get SBOM meta data for a specific delivery
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/check:
     get:
       operationId: getProjectVersionSBOMStatus
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: SPDX Status Information
@@ -469,30 +473,30 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get SBOM status information of project version
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/notice/html:
     get:
       operationId: getSBOMNoticeFileHTML
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
       produces:
-      - text/html
+        - text/html
       responses:
         "200":
           description: Notice File
@@ -507,30 +511,30 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get notice file for specified SBOM formatted as HTML
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/notice/json:
     get:
       operationId: getSBOMNoticeFileJSON
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Notice File
@@ -545,30 +549,30 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get notice file for specified SBOM formatted as JSON
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/notice/text:
     get:
       operationId: getSBOMNoticeFileText
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
       produces:
-      - text/plain
+        - text/plain
       responses:
         "200":
           description: Notice File
@@ -583,38 +587,38 @@ paths:
           schema:
             $ref: '#/definitions/HttpError404'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Get notice file for specified SBOM formatted as text
   /projects/{uuid}/versions/{version}/sboms/{sbomUuid}/tag:
     put:
       consumes:
-      - application/json
+        - application/json
       operationId: updateSpdxTag
       parameters:
-      - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: uuid
-        required: true
-        type: string
-      - description: 'Project Version e.g.: 1.0'
-        in: path
-        name: version
-        required: true
-        type: string
-      - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
+        - description: 'Project UUID e.g.: dummy-id---xxx-4413-yyy-24f060311111'
+          in: path
+          name: uuid
+          required: true
+          type: string
+        - description: 'Project Version e.g.: 1.0'
+          in: path
+          name: version
+          required: true
+          type: string
+        - description: 'UUID of the SBOM delivery or ''latest'' for the latest SBOM
           delivery e.g.: dummy-sbom-id---xxx-4413-yyy-24f060311111'
-        in: path
-        name: sbomUuid
-        required: true
-        type: string
-      - description: Tag
-        in: body
-        name: tag
-        required: true
-        schema:
-          $ref: '#/definitions/project.SPDXSetTagRequestDto'
+          in: path
+          name: sbomUuid
+          required: true
+          type: string
+        - description: Tag
+          in: body
+          name: tag
+          required: true
+          schema:
+            $ref: '#/definitions/project.SPDXSetTagRequestDto'
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success Response
@@ -633,7 +637,7 @@ paths:
           schema:
             $ref: '#/definitions/HttpError'
       security:
-      - Bearer: []
+        - Bearer: []
       summary: Update SPDX Tag
 definitions:
   ExternalSource:
@@ -818,6 +822,42 @@ definitions:
       status:
         example: active
         type: string
+      versionStatus:
+        items:
+          $ref: '#/definitions/VersionStatusPublicResponse'
+        type: array
+    type: object
+  VersionStatusPublicResponse:
+    properties:
+      lastSbomUploaded:
+        example: "2023-05-15T10:52:39.187559111Z"
+        type: string
+      name:
+        example: "1.0"
+        type: string
+      overallReview:
+        $ref: '#/definitions/OverallReviewPublicResponse'
+      status:
+        example: unreviewed
+        type: string
+    type: object
+  OverallReviewPublicResponse:
+    properties:
+      comment:
+        example: This is a dummy project.
+        type: string
+      created:
+        example: "2023-04-14T09:41:28.077559111Z"
+        type: string
+      sbomId:
+        example: dummy-id-----6b9c-44a7-8e01-14e67ef4404a
+        type: string
+      sbomName:
+        example: SBOM Name
+        type: string
+      sbomUploaded:
+        example: "2023-03-12T08:30:17.077559111Z"
+        type: string
     type: object
   SourceExternal:
     properties:
@@ -1001,10 +1041,16 @@ definitions:
   VersionDetails:
     properties:
       description:
+        example: version description
+        type: string
+      lastSbomUploaded:
+        example: "2023-05-15T10:52:39.187559111Z"
         type: string
       name:
         example: "1.0"
         type: string
+      overallReview:
+        $ref: '#/definitions/OverallReviewPublicResponse'
       status:
         example: unreviewed
         type: string
