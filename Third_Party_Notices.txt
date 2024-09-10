@@ -23,6 +23,7 @@ inconshreveable/mousetrap/v1.1.0 : Apache License 2.0 (Apache-2.0)
 jinzhu/configor/v1.2.1 : MIT License (MIT)
 jinzhu/configor/v1.2.2 : MIT License (MIT)
 pmezard-go-difflib/1.0.0 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
+spf13-cobra/1.8.1 : Apache License 2.0 (Apache-2.0)
 spf13-cobra/v1.7.0 : Apache License 2.0 (Apache-2.0)
 yaml for Go/v2.4.0 : Apache License 2.0 (Apache-2.0)
 yaml for Go/v3.0.1 : MIT License (MIT)
@@ -71,7 +72,10 @@ jinzhu/configor/v1.2.2 :
 pmezard-go-difflib/1.0.0 : 
 	Copyright (c) 2013, Patrick Mezard
 
-spf13-cobra/v1.7.0 : 
+spf13-cobra/1.8.1 :
+	Copyright 2013-2023 The Cobra Authors
+
+spf13-cobra/v1.7.0 :
 	Copyright 2013-2023 The Cobra Authors
 
 yaml for Go/v2.4.0 : 
