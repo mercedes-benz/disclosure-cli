@@ -27,7 +27,7 @@ jobs:
       run: |
         go build -v
     - name: Synopsys Detect
-      uses: synopsys-sig/detect-action@v0.3.0
+      uses: synopsys-sig/detect-action@v0.3.4
       env:
         SYNOPSYS_SKIP_PHONE_HOME: true
         DETECT_TOOLS: DETECTOR,SIGNATURE_SCAN,BINARY_SCAN,IMPACT_ANALYSIS,POLARIS,DOCKER,BAZEL
@@ -41,6 +41,6 @@ jobs:
       with:
         scan-mode: 'INTELLIGENT'
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        detect-version: 7.9.0
+        detect-version: 9.9.0
         blackduck-url: ${{ secrets.BD_URL}}
         blackduck-api-token: ${{ secrets.BD_API_TOKEN }}
