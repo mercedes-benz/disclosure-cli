@@ -4,7 +4,7 @@
 
 module github.com/mercedes-benz/disclosure-cli
 
-go 1.22
+go 1.22.0
 
 require (
 	github.com/jinzhu/configor v1.2.2
