@@ -41,6 +41,6 @@ jobs:
       with:
         scan-mode: 'INTELLIGENT'
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        detect-version: 9.9.0
+        detect-version: 9.10.0
         blackduck-url: ${{ secrets.BD_URL}}
         blackduck-api-token: ${{ secrets.BD_API_TOKEN }}
