@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-FROM gcr.io/distroless/static-debian11
+FROM scratch
 COPY disclosure-cli /usr/bin/disclosure-cli
+COPY Third_Party_Notices.txt Third_Party_Notices.txt
 ENTRYPOINT ["/usr/bin/disclosure-cli"]

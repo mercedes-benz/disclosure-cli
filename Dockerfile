@@ -12,7 +12,7 @@ COPY ./ ./
 
 RUN CGO_ENABLED=0 go build -o disclosure-cli
 
-FROM gcr.io/distroless/static-debian11
+FROM scratch
 WORKDIR /
 COPY --from=builder /cli/disclosure-cli .
 ENTRYPOINT ["/disclosure-cli"]
