@@ -10,31 +10,21 @@ The copyright holders of such FOSS usually do not provide any warranty and assum
 
 - Components -
 
-BurntSushi/toml/1.2.1 : MIT License (MIT)
-BurntSushi/toml/1.2.1 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
-BurntSushi/toml/1.2.1 : Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
-BurntSushi/toml/1.2.1 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 BurntSushi/toml/v1.4.0 : MIT License (MIT)
 Go Testify/v1.8.2 : MIT License (MIT)
 go-check-check/20171108-snapshot-20d25e28 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
 go-spew/v1.1.1 : ISC License (ISC)
 golang-github-spf13-pflag-dev/v1.0.5 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 inconshreveable/mousetrap/v1.1.0 : Apache License 2.0 (Apache-2.0)
-jinzhu/configor/v1.2.1 : MIT License (MIT)
 jinzhu/configor/v1.2.2 : MIT License (MIT)
 pmezard-go-difflib/1.0.0 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 spf13-cobra/1.8.1 : Apache License 2.0 (Apache-2.0)
-spf13-cobra/v1.7.0 : Apache License 2.0 (Apache-2.0)
-yaml for Go/v2.4.0 : Apache License 2.0 (Apache-2.0)
-yaml for Go/v3.0.1 : MIT License (MIT)
-yaml for Go/v3.0.1 : Apache License 2.0 (Apache-2.0)
+yaml for Go/v3.0.1 : MIT License (MIT) AND Apache License 2.0 (Apache-2.0)
+blackfriday/v2.1.0 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
+cpuguy83-go-md2man/v2.0.4 : MIT License (MIT)
+stretchr/objx/v0.5.0 : MIT License (MIT)
 
 - Copyright Texts -
-
-BurntSushi/toml/1.2.1 : 
-	Copyright 2010 The Go Authors.  All rights reserved.
-	Copyright (c) 2013 TOML authors
-	Copyright (c) 2018 TOML authors
 
 BurntSushi/toml/v1.4.0 : 
 	(c)
@@ -67,9 +57,6 @@ golang-github-spf13-pflag-dev/v1.0.5 :
 inconshreveable/mousetrap/v1.1.0 : 
 	Copyright 2022 Alan Shreve (@inconshreveable)
 
-jinzhu/configor/v1.2.1 : 
-	Copyright (c) 2013-NOW  Jinzhu &lt;wosmvp@gmail.com&gt;
-
 jinzhu/configor/v1.2.2 : 
 	Copyright (c) 2013-NOW Jinzhu &lt;wosmvp@gmail.com&gt;
 
@@ -82,14 +69,6 @@ spf13-cobra/1.8.1 :
 	copyright attribution)
 	copyright attribution (default YOUR NAME)
 
-spf13-cobra/v1.7.0 : 
-	(c)
-	Copyright 2013-2023 The Cobra Authors
-
-yaml for Go/v2.4.0 : 
-	Copyright 2011-2016 Canonical Ltd
-	Copyright (c) 2006 Kirill Simonov
-
 yaml for Go/v3.0.1 : 
 	Copyright 2011-2016 Canonical Ltd.
 	Copyright (c) 2006-2010 Kirill Simonov
@@ -97,6 +76,16 @@ yaml for Go/v3.0.1 :
 	Copyright (c) 2011-2019 Canonical Ltd
 	copyright staring in 2011 when the project was ported over:
 
+blackfriday/v2.1.0 :
+	Copyright © 2011 Russ Ross
+	All rights reserved.
+
+cpuguy83-go-md2man/v2.0.4 :
+	Copyright (c) 2014 Brian Goff
+
+stretchr/objx/v0.5.0 :
+	Copyright (c) 2014 Stretchr, Inc.
+	Copyright (c) 2017-2018 objx contributors
 
 - Licenses -
 
