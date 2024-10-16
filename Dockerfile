@@ -15,4 +15,5 @@ RUN CGO_ENABLED=0 go build -o disclosure-cli
 FROM scratch
 WORKDIR /
 COPY --from=builder /cli/disclosure-cli .
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["/disclosure-cli"]

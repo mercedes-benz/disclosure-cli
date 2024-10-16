@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
 #
 # SPDX-License-Identifier: MIT
+FROM golang:1.22-alpine as builder
 
 FROM scratch
 COPY disclosure-cli /usr/bin/disclosure-cli
 COPY Third_Party_Notices.txt Third_Party_Notices.txt
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["/usr/bin/disclosure-cli"]
