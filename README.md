@@ -148,10 +148,7 @@ sbom tag              Add tag to a sbom
 
 ```
 
-Note 12-06-2023: 
-2024 we will review the disclosure-cli to restructure the command structure and add new features. 
-With the current release we establish a new "sbom" command with a new sub command to add tags to a sbom.
-Existing sbom commands (sbomDetails, sbomNotice, sbomStatus, sbomUpload, sboms) will move to the new "sbom" command in 2024.  
+
 
 
 ### Help on commands
