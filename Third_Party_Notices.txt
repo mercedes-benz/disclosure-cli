@@ -47,7 +47,7 @@ go-spew/v1.1.1 :
 	Copyright (c) 2013 Dave Collins &lt;dave@davec.name&gt;
 	Copyright (c) 2015-2016 Dave Collins &lt;dave@davec.name&gt;
 
-golang-github-spf13-pflag-dev/v1.0.5 : 
+golang-github-spf13-pflag-dev/v1.0.6 :
 	Copyright 2009 The Go Authors. All rights reserved.
 	Copyright 2010 The Go Authors.  All rights reserved.
 	Copyright 2012 The Go Authors. All rights reserved.
