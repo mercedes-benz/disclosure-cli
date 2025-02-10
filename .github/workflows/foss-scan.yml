@@ -27,7 +27,7 @@ jobs:
       run: |
         go build -v
     - name: Synopsys Detect
-      uses: synopsys-sig/detect-action@v0.3.4
+      uses: blackduck-inc/black-duck-security-scan@v2.0.0
       env:
         SYNOPSYS_SKIP_PHONE_HOME: true
         DETECT_TOOLS: DETECTOR
@@ -40,8 +40,7 @@ jobs:
         DETECT_PROJECT_VERSION_NAME: ${{ secrets.BD_PROJECT_VERSION }}
         DETECT_BLACKDUCK_SIGNATURE_SCANNER_EXCLUSION_NAME_PATTERN: .git
       with:
-        scan-mode: 'INTELLIGENT'
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        detect-version: 9.9.0
-        blackduck-url: ${{ secrets.BD_URL}}
-        blackduck-api-token: ${{ secrets.BD_API_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        blackducksca_url: ${{ secrets.BD_URL}}
+        blackducksca_token: ${{ secrets.BD_API_TOKEN }}
+        blackducksca_scan_full: true # INTELLIGENT
