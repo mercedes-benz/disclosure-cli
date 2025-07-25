@@ -17,3 +17,7 @@ type RequestCssAdd struct {
 type RequestCreateTag struct {
 	Tag string `json:"tag"`
 }
+
+type RequestSbomSearch struct {
+	Tag string `json:"tag"`
+}
