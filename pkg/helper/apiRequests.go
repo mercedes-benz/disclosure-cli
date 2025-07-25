@@ -193,3 +193,36 @@ func DiscoApiGet(url string) string {
 
 	return string(body)
 }
+
+func DiscoApiDelete(url string) string {
+	client := &http.Client{}
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	req.Header.Set("accept", "application/json")
+	req.Header.Set("Authorization", "DISCO"+" "+conf.Config.ProjectToken)
+	req.Header.Set("User-Agent", conf.UserAgent())
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
+		os.Exit(1)
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Printf("\n Error on requesting url %s \n Error: %s ", url, err.Error())
+		os.Exit(1)
+	}
+	fmt.Println("Response from Host " + url)
+
+	statusOK := resp.StatusCode >= 200 && resp.StatusCode < 300
+	if !statusOK {
+		fmt.Println("Operation failed with status:", resp.Status)
+	}
+
+	return string(body)
+}

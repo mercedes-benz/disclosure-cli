@@ -59,13 +59,13 @@ func init() {
 	versionCmd.AddCommand(sbomUploadCmd)
 	versionCmd.AddCommand(sbomNoticeCmd)
 	versionCmd.AddCommand(sbomStatusCmd)
+	versionCmd.AddCommand(versionDeleteCmd)
 	rootCmd.AddCommand(versionCmd)
 
 	sbomCmd.AddCommand(sbomTagCmd)
 	rootCmd.AddCommand(sbomCmd)
 
 	rootCmd.AddCommand(sha256Cmd)
-
 }
 
 func initConfig() {
