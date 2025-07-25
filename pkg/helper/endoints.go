@@ -21,6 +21,16 @@ func GetProjectAPIURL(appendix string) string {
 	return ""
 }
 
+func GetGroupAPIURL(appendix string) string {
+	if len(conf.Config.ProjectUUID) > 0 {
+		return conf.Config.Host + "/groups/" + conf.Config.ProjectUUID + appendix
+	} else {
+		fmt.Println("Missing flag u - uuid of the project")
+		os.Exit(1)
+	}
+	return ""
+}
+
 func GetProjectVersionAPIURL(versionName, appendix string) string {
 	if len(versionName) > 0 {
 		url := conf.Config.Host + "/projects/" + conf.Config.ProjectUUID + "/versions/" + versionName
