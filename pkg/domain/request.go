@@ -21,3 +21,7 @@ type RequestCreateTag struct {
 type RequestSbomSearch struct {
 	Tag string `json:"tag"`
 }
+
+type RequestCommentRR struct {
+	Content string `json:"content"`
+}

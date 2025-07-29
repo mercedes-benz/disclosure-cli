@@ -58,13 +58,14 @@ func init() {
 	versionCmd.AddCommand(sbomDetailsCmd)
 	versionCmd.AddCommand(sbomUploadCmd)
 	versionCmd.AddCommand(sbomNoticeCmd)
-	versionCmd.AddCommand(sbomStatusCmd)
+	versionCmd.AddCommand(reviewRemarkListCmd)
+	versionCmd.AddCommand(reviewRemarkCommentCmd)
 	rootCmd.AddCommand(versionCmd)
 
 	sbomCmd.AddCommand(sbomTagCmd)
 	sbomCmd.AddCommand(sbomSearchCmd)
+	sbomCmd.AddCommand(sbomLockCmd)
 	rootCmd.AddCommand(sbomCmd)
-
 	rootCmd.AddCommand(sha256Cmd)
 }
 
