@@ -63,9 +63,9 @@ func init() {
 	rootCmd.AddCommand(versionCmd)
 
 	sbomCmd.AddCommand(sbomTagCmd)
+	sbomCmd.AddCommand(sbomSearchCmd)
 	sbomCmd.AddCommand(sbomLockCmd)
 	rootCmd.AddCommand(sbomCmd)
-
 	rootCmd.AddCommand(sha256Cmd)
 }
 
