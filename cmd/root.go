@@ -45,6 +45,7 @@ func init() {
 	projectCmd.AddCommand(projectDetailsCmd)
 	projectCmd.AddCommand(projectStatus)
 	projectCmd.AddCommand(policyRulesCmd)
+	projectCmd.AddCommand(projectChildrenCmd)
 	projectCmd.AddCommand(schemaCmd)
 	projectCmd.AddCommand(onDemandCheckSBOM)
 	rootCmd.AddCommand(projectCmd)
