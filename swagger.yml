@@ -20,7 +20,7 @@ securityDefinitions:
     name: Authorization
     type: apiKey
 paths:
-  /group/{uuid}/children:
+  /groups/{uuid}/children:
     get:
       operationId: getChildrenProjects
       parameters:
