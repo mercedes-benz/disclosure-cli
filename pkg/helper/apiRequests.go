@@ -196,7 +196,7 @@ func DiscoApiGet(url string) string {
 
 func DiscoApiDelete(url string) string {
 	client := &http.Client{}
-	req, err := http.NewRequest(http.MethodGet, url, nil)
+	req, err := http.NewRequest(http.MethodDelete, url, nil)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
