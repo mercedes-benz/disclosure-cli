@@ -11,64 +11,64 @@ The copyright holders of such FOSS usually do not provide any warranty and assum
 - Components -
 
 blackfriday/v2.1.0 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
-BurntSushi/toml/v1.4.0 : MIT License (MIT)
-cpuguy83-go-md2man/v2.0.4 : MIT License (MIT)
+BurntSushi/toml/v1.5.0 : MIT License (MIT)
+cpuguy83-go-md2man/v2.0.6 : MIT License (MIT)
 Go Testify/v1.8.2 : MIT License (MIT)
 go-check-check/20171108-snapshot-20d25e28 : BSD 2-Clause "Simplified" License (BSD-2-Clause)
 go-spew/v1.1.1 : ISC License (ISC)
-golang-github-spf13-pflag-dev/v1.0.6 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
+golang-github-spf13-pflag-dev/v1.0.10 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
 inconshreveable/mousetrap/v1.1.0 : Apache License 2.0 (Apache-2.0)
 jinzhu/configor/v1.2.2 : MIT License (MIT)
 pmezard-go-difflib/1.0.0 : BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)
-spf13-cobra/1.8.1 : Apache License 2.0 (Apache-2.0)
+spf13-cobra/1.10.1 : Apache License 2.0 (Apache-2.0)
 stretchr/objx/v0.5.0 : MIT License (MIT)
 yaml for Go/v3.0.1 : MIT License (MIT)
 yaml for Go/v3.0.1 : Apache License 2.0 (Apache-2.0)
 
 - Copyright Texts -
 
-blackfriday/v2.1.0 : 
+blackfriday/v2.1.0 :
 	Copyright © 2011 Russ Ross &gt; All rights reserved
 	Copyright © 2011 Russ Ross &lt;russ@russross.com&gt;.
 
-BurntSushi/toml/v1.4.0 : 
+BurntSushi/toml/v1.5.0 :
 	Copyright 2010 The Go Authors. All rights reserved
 	Copyright (c) 2013 TOML authors
 
-cpuguy83-go-md2man/v2.0.4 : 
+cpuguy83-go-md2man/v2.0.6 :
 	Copyright (c) 2014 Brian Goff
 
-Go Testify/v1.8.2 : 
+Go Testify/v1.8.2 :
 	Copyright (c) 2012-2020 Mat Ryer, Tyler Bunnell and contributors.
 
-go-check-check/20171108-snapshot-20d25e28 : 
+go-check-check/20171108-snapshot-20d25e28 :
 	Copyright (c) 2010-2013 Gustavo Niemeyer &lt;gustavo@niemeyer.net&gt; All rights reserved
 	Copyright (c) 2012 The Go Authors. All rights reserved
 
-go-spew/v1.1.1 : 
+go-spew/v1.1.1 :
 	Copyright (c) 2012-2016 Dave Collins &lt;dave@davec.name&gt; Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copy
 	Copyright (c) 2012-2016 Dave Collins &lt;dave@davec.name&gt; Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above c
 	Copyright (c) 2013-2016 Dave Collins &lt;dave@davec.name&gt; Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copy
 	Copyright (c) 2013 Dave Collins &lt;dave@davec.name&gt; Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright
 	Copyright (c) 2015-2016 Dave Collins &lt;dave@davec.name&gt; Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copy
 
-golang-github-spf13-pflag-dev/v1.0.6 : 
+golang-github-spf13-pflag-dev/v1.0.10 :
 	Copyright 2009 The Go Authors. All rights reserved
 	Copyright 2010 The Go Authors. All rights reserved
 	Copyright 2012 The Go Authors. All rights reserved
 	Copyright (c) 2012 Alex Ogier. All rights reserved
 	Copyright (c) 2012 The Go Authors. All rights reserved
 
-inconshreveable/mousetrap/v1.1.0 : 
+inconshreveable/mousetrap/v1.1.0 :
 	Copyright 2022 Alan Shreve (@inconshreveable)
 
-jinzhu/configor/v1.2.2 : 
+jinzhu/configor/v1.2.2 :
 	Copyright (c) 2013-NOW Jinzhu &lt;wosmvp@gmail.com&gt;
 
-pmezard-go-difflib/1.0.0 : 
+pmezard-go-difflib/1.0.0 :
 	Copyright (c) 2013, Patrick Mezard All rights reserved
 
-spf13-cobra/1.8.1 : 
+spf13-cobra/1.10.1 :
 	Copyright 2013-2023 The Cobra Authors
 	copyright attribution)
 	copyright attribution (default YOUR NAME)
