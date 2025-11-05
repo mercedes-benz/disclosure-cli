@@ -4,6 +4,7 @@
 
 name: Foss scan
 permissions:
+  packages: write
   contents: read
 on:
   pull_request:
