@@ -48,5 +48,7 @@ jobs:
         blackducksca_token: ${{ secrets.BD_API_TOKEN }}
         blackducksca_scan_full: true # INTELLIGENT
   call-sbom-upload:
+    needs: if_merged
     uses: ./.github/workflows/sbom-upload.yml
+    secrets: inherit
 
