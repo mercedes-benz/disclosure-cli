@@ -62,3 +62,4 @@ jobs:
           command_type: 'version'
           command: 'sbomUpload'
           argument_1: ${{env.SBOM}}
+          argument_2: ${{ github.sha }}
