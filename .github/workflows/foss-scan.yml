@@ -22,7 +22,7 @@ jobs:
     - uses: actions/setup-go@v3
       continue-on-error: true
       with:
-        go-version: '^1.23'
+        go-version: '^1.25'
     - name: build binary
       run: |
         go build -v
@@ -44,3 +44,6 @@ jobs:
         blackducksca_url: ${{ secrets.BD_URL}}
         blackducksca_token: ${{ secrets.BD_API_TOKEN }}
         blackducksca_scan_full: true # INTELLIGENT
+  call-sbom-upload:
+    uses: ./.github/workflows/sbom-upload.yml
+
