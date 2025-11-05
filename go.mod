@@ -4,11 +4,11 @@
 
 module github.com/mercedes-benz/disclosure-cli
 
-go 1.23.6
+go 1.25.3
 
 require (
 	github.com/jinzhu/configor v1.2.2
-	github.com/spf13/cobra v1.8.1
+	github.com/spf13/cobra v1.10.1
 )
 
 require (
@@ -18,8 +18,8 @@ require (
 )
 
 require (
-	github.com/BurntSushi/toml v1.4.0 // indirect
+	github.com/BurntSushi/toml v1.5.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/spf13/pflag v1.0.6 // indirect
+	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/stretchr/testify v1.8.2
 )

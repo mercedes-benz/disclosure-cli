@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-FROM golang:1.23-alpine as builder
+FROM golang:1.25-alpine AS builder
 WORKDIR /cli
 
 COPY go.mod go.sum ./
