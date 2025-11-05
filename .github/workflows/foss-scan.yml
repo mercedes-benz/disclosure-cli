@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 name: Foss scan
+permissions:
+  contents: read
 on:
   pull_request:
     types:
