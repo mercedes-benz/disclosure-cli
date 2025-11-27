@@ -11,7 +11,7 @@ var projectChildrenCmd = &cobra.Command{
 	Short: "Returning the project children",
 	Long:  `The details of the project children`,
 	Run: func(cmd *cobra.Command, args []string) {
-		msg := helper.DiscoApiGet(helper.GetGroupAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/children"))
+		msg := helper.DiscoApiGet(helper.GetGroupAPIURL(conf.DefaultApiVersion, "/children"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

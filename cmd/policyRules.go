@@ -15,7 +15,7 @@ var policyRulesCmd = &cobra.Command{
 	Short: "Returning the project policy rules",
 	Long:  `The policy rules of the project`,
 	Run: func(cmd *cobra.Command, args []string) {
-		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/policyrules"))
+		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/policyrules"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

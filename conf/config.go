@@ -108,31 +108,23 @@ func getEnvVariable(envKey string, defaultValue string) string {
 func EnsureApiVerison() {
 	Config.Host = strings.TrimSuffix(Config.Host, "/")
 
-	// Check if host contains old format with /public/v1 or /public/v2
-	if strings.Contains(Config.Host, "/public/v1") || strings.Contains(Config.Host, "/public/v2") {
-		fmt.Println("════════════════════════════════════════════════════════════════")
+	// Check if host contains version paths which are no longer allowed
+	if strings.Contains(Config.Host, "/v1") || strings.Contains(Config.Host, "/v2") {
+		fmt.Println("═══════════════════════════════════════════════════════════════")
 		fmt.Println("⚠️  ERROR: Host URL format has changed!")
-		fmt.Println("════════════════════════════════════════════════════════════════")
+		fmt.Println("═══════════════════════════════════════════════════════════════")
 		fmt.Println("")
-		fmt.Println("Your host URL contains '/public/v1' or '/public/v2' which is no longer allowed.")
+		fmt.Println("Your host URL contains '/v1' or '/v2' which is no longer allowed.")
 		fmt.Println("As per the new update, only the base URL is allowed.")
 		fmt.Println("")
 		fmt.Println("Current URL:", Config.Host)
 		fmt.Println("")
 		fmt.Println("Please update your configuration to use only the base URL:")
-		fmt.Println("Example: https://your-domain.com")
+		fmt.Println("Example: https://production.gorillas.mercedes-benz.com/disco")
+		fmt.Println("         https://production.gorillas.mercedes-benz.com/public")
 		fmt.Println("")
-		fmt.Println("The CLI will automatically append /public/v1 or /public/v2 as needed.")
-		fmt.Println("════════════════════════════════════════════════════════════════")
+		fmt.Println("The CLI will automatically append the version as needed.")
+		fmt.Println("═══════════════════════════════════════════════════════════════")
 		os.Exit(1)
 	}
-
-	if strings.HasSuffix(Config.Host, "/public") || strings.HasSuffix(Config.Host, "/disco") {
-		Config.Host += "/" + DefaultApiVersion
-		return
-	}
-	if !strings.HasSuffix(Config.Host, "/"+DefaultApiVersion) {
-		fmt.Println("WARNING: non-default api version set, unexpected behavior is possible")
-	}
-
 }

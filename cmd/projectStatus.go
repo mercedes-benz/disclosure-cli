@@ -15,7 +15,7 @@ var projectStatus = &cobra.Command{
 	Short: "Returning the project status",
 	Long:  `The status of the project`,
 	Run: func(cmd *cobra.Command, args []string) {
-		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/status"))
+		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/status"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

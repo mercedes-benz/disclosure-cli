@@ -15,7 +15,7 @@ var schemaCmd = &cobra.Command{
 	Short: "Returning the project schema",
 	Long:  `The schema of the project`,
 	Run: func(cmd *cobra.Command, args []string) {
-		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/schema"))
+		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/schema"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

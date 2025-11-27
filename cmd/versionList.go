@@ -15,7 +15,7 @@ var versionListCmd = &cobra.Command{
 	Short: "Returning the project version list",
 	Long:  `The version list of the project`,
 	Run: func(cmd *cobra.Command, args []string) {
-		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/versions"))
+		msg := helper.DiscoApiGet(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/versions"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

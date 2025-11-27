@@ -27,7 +27,7 @@ var sbomSearchCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		msg := helper.DiscoApiPost(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/search"), data)
+		msg := helper.DiscoApiPost(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/search"), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

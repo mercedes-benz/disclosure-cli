@@ -30,7 +30,7 @@ var createVersionCmd = &cobra.Command{
 			data.Description = args[1]
 		}
 
-		msg := helper.DiscoApiPost(helper.GetProjectAPIURL(conf.DefaultApiVisibility, conf.DefaultApiVersion, "/versions"), data)
+		msg := helper.DiscoApiPost(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/versions"), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }
