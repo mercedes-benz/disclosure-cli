@@ -23,7 +23,7 @@ var versionDetailsCmd = &cobra.Command{
 			fmt.Println("Missing project version")
 			os.Exit(1)
 		}
-		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(projectVersion, ""))
+		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, ""))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

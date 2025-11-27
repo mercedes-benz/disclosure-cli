@@ -16,7 +16,7 @@ var reviewRemarkListCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		projectVersion := conf.Config.ProjectVersion
 
-		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(projectVersion, "reviewremarks"))
+		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "reviewremarks"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }
@@ -38,7 +38,7 @@ var reviewRemarkCommentCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		msg := helper.DiscoApiPost(helper.GetProjectVersionAPIURL(projectVersion, "reviewremarks/"+rrId), data)
+		msg := helper.DiscoApiPost(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "reviewremarks/"+rrId), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

@@ -24,7 +24,7 @@ var sbomDetailsCmd = &cobra.Command{
 			sbomId = "latest"
 		}
 
-		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(projectVersion, "sboms/"+sbomId))
+		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "sboms/"+sbomId))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

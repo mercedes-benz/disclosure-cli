@@ -23,7 +23,7 @@ var sbomLockCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		msg := helper.DiscoApiPut(helper.GetProjectVersionAPIURL(projectVersion, "sboms/"+sbomId+"/lock"), struct{}{})
+		msg := helper.DiscoApiPut(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "sboms/"+sbomId+"/lock"), struct{}{})
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }
