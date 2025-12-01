@@ -18,7 +18,7 @@ var (
 	configPath       = "./../conf.yml"
 	spdxFile         = "./../sbom.json"
 	ccsReferenceLink = "https://github.com/mercedes-benz"
-	sbomId           = "9de2a2a5-637d-44cd-a2ef-e4618bdabd13"
+	sbomId           = "a4bfa230-b8f7-4f63-90a3-01c69be94973" // marked for retention
 )
 
 func init() {
@@ -397,7 +397,7 @@ func TestSbomTagCmd(t *testing.T) {
 	}{
 		{
 			name: "Sbom: Add Tag to sbom",
-			cmd:  []string{"sbom", "tag", sbomId,"2.2","-c", configPath},
+			cmd:  []string{"sbom", "tag", sbomId, "2.2", "-c", configPath},
 			want: []string{"success", "true", "message", "Spdx tag updated"},
 		},
 	}
