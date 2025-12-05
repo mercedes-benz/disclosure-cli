@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mercedes-benz/disclosure-cli/conf"
 	"github.com/mercedes-benz/disclosure-cli/pkg/domain"
 	"github.com/mercedes-benz/disclosure-cli/pkg/helper"
 	"github.com/spf13/cobra"
@@ -29,7 +30,7 @@ var createVersionCmd = &cobra.Command{
 			data.Description = args[1]
 		}
 
-		msg := helper.DiscoApiPost(helper.GetProjectAPIURL("/versions"), data)
+		msg := helper.DiscoApiPost(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/versions"), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }
