@@ -36,7 +36,7 @@ var ccsAddCmd = &cobra.Command{
 			data.Comment = args[1]
 		}
 
-		msg := helper.DiscoApiPost(helper.GetProjectVersionAPIURL(projectVersion, "ccs"), data)
+		msg := helper.DiscoApiPost(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "ccs"), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

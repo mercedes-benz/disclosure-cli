@@ -19,7 +19,7 @@ var versionDeleteCmd = &cobra.Command{
 			fmt.Println("Missing project version")
 			os.Exit(1)
 		}
-		msg := helper.DiscoApiDelete(helper.GetProjectVersionAPIURL(projectVersion, ""))
+		msg := helper.DiscoApiDelete(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, ""))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

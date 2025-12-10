@@ -30,7 +30,7 @@ var sbomTagCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		msg := helper.DiscoApiPut(helper.GetProjectVersionAPIURL(projectVersion, "sboms/"+sbomId+"/tag"), data)
+		msg := helper.DiscoApiPut(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "sboms/"+sbomId+"/tag"), data)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }
