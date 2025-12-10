@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mercedes-benz/disclosure-cli/conf"
 	"github.com/mercedes-benz/disclosure-cli/pkg/helper"
 	"github.com/spf13/cobra"
 )
@@ -24,7 +25,7 @@ var onDemandCheckSBOM = &cobra.Command{
 			fmt.Println("Missing filename of SBOM upload")
 			os.Exit(1)
 		}
-		msg := helper.SbomUploadFormData(helper.GetProjectAPIURL("/sbomcheck"), fileName, "")
+		msg := helper.SbomUploadFormData(helper.GetProjectAPIURL(conf.DefaultApiVersion, "/sbomcheck"), fileName, "")
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

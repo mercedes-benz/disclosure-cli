@@ -34,7 +34,7 @@ var sbomUploadCmd = &cobra.Command{
 			fmt.Println("Missing filename of SBOM upload")
 			os.Exit(1)
 		}
-		msg := helper.SbomUploadFormData(helper.GetProjectVersionAPIURL(projectVersion, "sboms"), fileName, tag)
+		msg := helper.SbomUploadFormData(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "sboms"), fileName, tag)
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

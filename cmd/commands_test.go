@@ -397,7 +397,7 @@ func TestSbomTagCmd(t *testing.T) {
 	}{
 		{
 			name: "Sbom: Add Tag to sbom",
-			cmd:  []string{"sbom", "tag", sbomId,"2.2","-c", configPath},
+			cmd:  []string{"sbom", "tag", sbomId, "2.2", "-c", configPath},
 			want: []string{"success", "true", "message", "Spdx tag updated"},
 		},
 	}
