@@ -24,7 +24,7 @@ var statusCCSCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(projectVersion, "ccs"))
+		msg := helper.DiscoApiGet(helper.GetProjectVersionAPIURL(conf.DefaultApiVersion, projectVersion, "ccs"))
 		helper.WriteMessageToOut(cmd, ""+helper.PrettyJSONString(msg))
 	},
 }

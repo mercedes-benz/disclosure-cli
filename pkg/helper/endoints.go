@@ -11,9 +11,17 @@ import (
 	"github.com/mercedes-benz/disclosure-cli/conf"
 )
 
-func GetProjectAPIURL(appendix string) string {
+// BuildAPIURL builds the complete API URL with version
+// version: "v1" or "v2"
+// path: the endpoint path (e.g., "/projects/uuid")
+func BuildAPIURL(version, path string) string {
+	baseHost := conf.Config.Host
+	return fmt.Sprintf("%s/%s%s", baseHost, version, path)
+}
+
+func GetProjectAPIURL(version, appendix string) string {
 	if len(conf.Config.ProjectUUID) > 0 {
-		return conf.Config.Host + "/projects/" + conf.Config.ProjectUUID + appendix
+		return BuildAPIURL(version, "/projects/"+conf.Config.ProjectUUID+appendix)
 	} else {
 		fmt.Println("Missing flag u - uuid of the project")
 		os.Exit(1)
@@ -21,9 +29,9 @@ func GetProjectAPIURL(appendix string) string {
 	return ""
 }
 
-func GetGroupAPIURL(appendix string) string {
+func GetGroupAPIURL(version, appendix string) string {
 	if len(conf.Config.ProjectUUID) > 0 {
-		return conf.Config.Host + "/groups/" + conf.Config.ProjectUUID + appendix
+		return BuildAPIURL(version, "/groups/"+conf.Config.ProjectUUID+appendix)
 	} else {
 		fmt.Println("Missing flag u - uuid of the project")
 		os.Exit(1)
@@ -31,13 +39,13 @@ func GetGroupAPIURL(appendix string) string {
 	return ""
 }
 
-func GetProjectVersionAPIURL(versionName, appendix string) string {
+func GetProjectVersionAPIURL(version, versionName, appendix string) string {
 	if len(versionName) > 0 {
-		url := conf.Config.Host + "/projects/" + conf.Config.ProjectUUID + "/versions/" + versionName
+		path := "/projects/" + conf.Config.ProjectUUID + "/versions/" + versionName
 		if len(appendix) > 0 {
-			url = url + "/" + appendix
+			path = path + "/" + appendix
 		}
-		return url
+		return BuildAPIURL(version, path)
 	} else {
 		fmt.Println("Missing flag u - versionName of the project")
 		os.Exit(1)
