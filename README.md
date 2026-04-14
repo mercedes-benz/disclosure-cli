@@ -3,6 +3,14 @@ SPDX-FileCopyrightText: 2023 Mercedes-Benz Tech Innovation GmbH
 
 SPDX-License-Identifier: MIT
 -->
+# ⚠️ Project Archived
+
+This repository is no longer actively maintained.
+
+Please use the new Eclipse Foundation project instead:
+https://github.com/eclipse-disuko/disuko-cli
+
+This repository is kept for reference only.
 
 # Disclosure-CLI
 
